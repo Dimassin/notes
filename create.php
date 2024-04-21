@@ -1,44 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-    <title>Создание поста</title>
+    <title>Добавление контакта</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div><a href="index.php">назад</a></div>
     <div>
-        <label for="title">Заголовок</label><br>
-        <input id="title"/><br>
+        <label for="name">ФИО:</label><br>
+        <input id="name"/><br>
     </div>
     <div>
-        <label for="content">Содержание</label><br>
-        <input id="content"/><br>
+        <label for="phoneNumber">Номер телефона:</label><br>
+        <input type="number" id="phoneNumber"/><br>
     </div>
-    <div><input type="button" value="добавить заметку" onclick="addNote()"/></div>
-<script>
-    function addNote() {
-        const title = document.getElementById('title').value;
-        const content = document.getElementById('content').value;
-
-        const data = {
-            title: title,
-            content: content,
-        }
-
-        const fetchConfig = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        }
-
-        fetch('./store.php', fetchConfig)
-            .then(response => response.json())
-            .then(responseData => {
-                alert(responseData)
-            })
-    }
-</script>
+    <div><input type="button" value="добавить контакт" onclick="addContact()"/></div>
+<script src="scripts/validate.js"></script>
+<script src="scripts/add_contact.js"></script>
 </body>
 </html>

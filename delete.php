@@ -12,12 +12,7 @@ if (file_exists($dataPath)) {
     $jsonContacts = file_get_contents($dataPath);
     $contacts = json_decode($jsonContacts, true);
 
-    $newContact = [
-        "name" => $data['name'],
-        "phoneNumber" => $data['phoneNumber']
-    ];
-
-    $contacts[] = $newContact;
+    unset($contacts[$data['position']]);
 
     $jsonContacts = json_encode($contacts, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
@@ -27,4 +22,4 @@ if (file_exists($dataPath)) {
     exit;
 }
 
-echo json_encode('новый контакт добавлен');
+echo json_encode('контакт успешно удалён');
