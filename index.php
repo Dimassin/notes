@@ -1,5 +1,8 @@
 <?php
 
+$test = 50;
+echo 'test value equals ' . $test;
+
 $dataPath = 'data.json';
 
 if (file_exists($dataPath)) {
