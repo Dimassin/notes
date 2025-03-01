@@ -1,7 +1,7 @@
 <?php
 
-$testValue = 50;
-var_dump('test value equals ' . $testValue);
+$test = 50;
+echo 'test value equals ' . $test;
 
 $dataPath = 'data.json';
 
